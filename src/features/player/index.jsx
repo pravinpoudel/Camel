@@ -9,7 +9,7 @@ function Player(props) {
     <div
       style={{
         position: "absolute",
-        top: props.position[0],
+        bottom: props.position[0],
         left: props.position[1],
         backgroundImage: `url('${Camel}')`,
         backgroundSize: "cover",

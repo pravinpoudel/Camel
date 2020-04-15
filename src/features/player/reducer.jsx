@@ -1,4 +1,4 @@
-const inititalState = { position: [122, 0] };
+const inititalState = { position: [15, 25] };
 
 const reducerName = (state = inititalState, action) => {
   switch (action.type) {

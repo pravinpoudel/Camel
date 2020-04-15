@@ -6,6 +6,7 @@ import store from "../../config/store";
 function World(props) {
   return (
     <div
+      className="player-div"
       style={{
         width: "800px",
         height: "600px",
