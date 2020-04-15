@@ -1,9 +1,11 @@
-const inititalState = { position: [0, 0] };
+const inititalState = { position: [122, 0] };
 
 const reducerName = (state = inititalState, action) => {
   switch (action.type) {
     case "MOVE_PLAYER":
-      return action.player;
+      return {
+        ...action.payload,
+      };
     default:
       return state;
   }
