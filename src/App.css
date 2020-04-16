@@ -4,10 +4,17 @@
 .player-div::after {
   content: "";
   width: 100%;
-  height: 32%;
+  height: 50%;
   position: absolute;
   bottom: 0px;
   left: 0px;
   background-size: cover;
   background-image: url("/world_bottom.png");
+}
+
+.bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #222dff;
+  border-radius: 50%;
 }

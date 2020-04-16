@@ -9,18 +9,27 @@ export default function movement(player) {
         return [oldPos[0], oldPos[1] + 100];
       case "WEST":
         return [oldPos[0], oldPos[1] - 100];
+      case "NORTH":
+        return [oldPos[0] + 100, oldPos[1]];
     }
+  }
+
+  function withinBoundary(newPos) {
+    return (
+      newPos[0] >= 0 && newPos[0] < 800 && newPos[1] >= 0 && newPos[1] <= 725
+    );
   }
   function attemptmove(direction) {
     const oldPos = store.getState().player.position;
     const newPosition = getNewPosition(direction);
-    console.log(newPosition);
-    store.dispatch({
-      type: "MOVE_PLAYER",
-      payload: {
-        position: newPosition,
-      },
-    });
+    if (withinBoundary(newPosition)) {
+      store.dispatch({
+        type: "MOVE_PLAYER",
+        payload: {
+          position: newPosition,
+        },
+      });
+    }
   }
 
   function handleKey(event) {
@@ -29,6 +38,8 @@ export default function movement(player) {
         return attemptmove("EAST");
       case 37:
         return attemptmove("WEST");
+      case 38:
+        return attemptmove("NORTH");
     }
   }
   window.addEventListener("keydown", (e) => {

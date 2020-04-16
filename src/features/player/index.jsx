@@ -13,8 +13,8 @@ function Player(props) {
         left: props.position[1],
         backgroundImage: `url('${Camel}')`,
         backgroundSize: "cover",
-        width: "200px",
-        height: "240px",
+        width: "275px",
+        height: "350px",
       }}
     />
   );
